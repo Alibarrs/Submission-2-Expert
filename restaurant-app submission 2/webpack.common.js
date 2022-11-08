@@ -29,17 +29,17 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.resolve(__dirname, 'src/templates/index.html'),
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'),
-          to: path.resolve(__dirname, 'dist/'),
+          to: path.resolve(__dirname, 'dist'),
         },
       ],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
     new WebpackPwaManifest({
       name: 'RESTORAN app',
@@ -47,6 +47,7 @@ module.exports = {
       description: 'catalogue RESTORAN FREE FOR YOU!',
       background_color: '#ffffff',
       fingerprints: false,
+      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
       icons: [
         {
           src: path.resolve('src/public/favicon.png'),
