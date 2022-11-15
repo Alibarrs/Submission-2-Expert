@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: {
@@ -33,27 +32,13 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'dist/'),
         },
       ],
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
-    }),
-    new WebpackPwaManifest({
-      name: 'RESTORAN app',
-      short_name: 'MyRESTO',
-      description: 'catalogue RESTORAN FREE FOR YOU!',
-      background_color: '#ffffff',
-      fingerprints: false,
-      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-      icons: [
-        {
-          src: path.resolve('src/public/favicon.png'),
-          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-        },
-      ],
     }),
   ],
 };

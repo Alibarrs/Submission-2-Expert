@@ -9,10 +9,10 @@ class headerNavbar extends HTMLElement {
                                 <a href="#"><h1><span>REST</span>oran</h1></a>
                              </div>
 
-                             <nav id="navigationDrawer" class="header-right">
+                            <nav id="navigationDrawer" class="header-right">
                                 <ul class="nav-list">
                                     <li class="nav-item"><a href="/">Home</a></li>
-                                    <li class="nav-item"><a href="#">Favorite</a></li>
+                                    <li class="nav-item"><a href="#/favorite">Favorite</a></li>
                                     <li class="nav-item"><a href="https://www.linkedin.com/in/muh-alief-akbar-9ba650205/">About</a> </li>
                                 </ul>
                              </nav>
