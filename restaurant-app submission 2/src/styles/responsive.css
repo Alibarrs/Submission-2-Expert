@@ -14,6 +14,13 @@
   .hamburger {
     display: none;
   }
+
+  .header-right {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -62,7 +69,7 @@
     margin: 0 auto;
   }
   .header-left {
-    width: 50%;
+    width: 100%;
   }
 
   .header-left a h1 {

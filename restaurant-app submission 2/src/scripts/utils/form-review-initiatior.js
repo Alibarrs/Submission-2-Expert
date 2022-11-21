@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import TheRestoDbSource from '../data/therestodb-source';
 import { createFormReviewTemplate } from '../views/templates/template-creator';
 
@@ -12,27 +13,27 @@ const FormReviewInitiator = {
   async _renderForm() {
     this._formReviewContainer.innerHTML = createFormReviewTemplate();
 
-    const btnSubmit = document.querySelector('.form-submit');
+    const formSubmit = document.querySelector('.form-submit');
 
-    btnSubmit.addEventListener('click', async (e) => {
-      e.preventDefault();
+    formSubmit.addEventListener('click', async (event) => {
+      event.preventDefault();
 
-      const inputName = document.querySelector('.textNama');
-      const inputReview = document.querySelector('.textReview');
+      const textName = document.querySelector('.txtNama');
+      const textReview = document.querySelector('.txtReview');
       const form = document.querySelector('form');
 
       const reviewData = {
         id: this._id,
-        name: inputName.value,
-        review: inputReview.value,
+        name: textName.value,
+        review: textReview.value,
       };
 
-      if (inputName.value === '') {
-        alert('Nama tidak boleh kosong!');
-      } else if (inputReview.value === '') {
-        alert('Review tidak boleh kosong!');
+      if (textName.value === '') {
+        alert('Nama kosong, silahkan isi');
+      } else if (textReview.value === '') {
+        alert('Review kosong silahkan isi');
       } else {
-        await TheRestoDbSource.reviewRestaurant(reviewData);
+        await TheRestoDbSource.postRestoReview(reviewData);
         form.reset();
         alert('Review berhasil ditambahkan!');
         this._renderReview(reviewData.name, reviewData.review);

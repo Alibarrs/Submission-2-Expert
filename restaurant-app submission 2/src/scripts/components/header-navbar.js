@@ -8,6 +8,8 @@ class headerNavbar extends HTMLElement {
                              <div class="header-left">
                                 <a href="#"><h1><span>REST</span>oran</h1></a>
                              </div>
+                             
+                             <button id="hamburgerButton" class="hamburger">☰</button>
 
                             <nav id="navigationDrawer" class="header-right">
                                 <ul class="nav-list">
@@ -16,7 +18,7 @@ class headerNavbar extends HTMLElement {
                                     <li class="nav-item"><a href="https://www.linkedin.com/in/muh-alief-akbar-9ba650205/">About</a> </li>
                                 </ul>
                              </nav>
-                             <button id="hamburgerButton" class="hamburger">☰</button>
+                             
                             </header> `;
   }
 }

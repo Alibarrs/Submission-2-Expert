@@ -5,7 +5,7 @@ class mainBar extends HTMLElement {
 
   render() {
     this.innerHTML = `    
-                           <main id="mainContent">
+                           <main id="mainContent" tabindex="0">
                              <section class="content">
                                <div class="latest">
                                  <div class="latest__label">

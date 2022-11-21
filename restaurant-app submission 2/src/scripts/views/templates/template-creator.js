@@ -106,11 +106,11 @@ const createFormReviewTemplate = () => `
   <form class="form-container">
     <div class="form-nama"> 
         <label for="nama">Nama</label>
-        <input class="Nama" type="text" name="nama" placeholder="Masukan nama">
+        <input class="txtNama" type="text" name="nama" placeholder="Masukan nama">
     </div>
     <div class="form-review">
         <label for="review">Review</label>
-        <textarea class="textReview"name="review" placeholder="Masukan review"></textarea>
+        <textarea class="txtReview" name="review" placeholder="Masukan review"></textarea>
     </div>
     <button type="submit" class="form-submit">Kirim</button>
   </form>

@@ -5,9 +5,10 @@ class favoriteBar extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <div class="alert"> 
-     <p> <strong>Info!</strong> Anda belum menambahkan restoran favorite! </p>
-    </div>`;
+                          <div class="alert"> 
+                              <p> <strong>Info!</strong> Anda belum menambahkan restoran favorite! </p>
+                          </div>
+                          `;
   }
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import UrlParser from '../../routes/url-parser';
 import TheRestoDbSource from '../../data/therestodb-source';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
@@ -32,7 +33,9 @@ const Detail = {
       loader.style.display = 'none';
       window.scrollTo(0, 0);
 
-      restaurantContainer.innerHTML += createRestaurantDetailTemplate(data.restaurant);
+      restaurantContainer.innerHTML += createRestaurantDetailTemplate(
+        data.restaurant
+      );
 
       FormReviewInitiator.init({
         formReviewContainer: document.querySelector('#formReviewContainer'),
