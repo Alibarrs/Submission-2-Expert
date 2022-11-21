@@ -4,7 +4,9 @@ class LoaderBar extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `<div class="loader" id="loader"></div>`;
+    this.innerHTML = `
+                          <div class="loader" id="loader"></div>
+                        `;
   }
 }
 

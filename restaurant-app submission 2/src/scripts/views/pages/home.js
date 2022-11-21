@@ -16,7 +16,6 @@ const Home = {
   },
 
   async afterRender() {
-    const restoCardContainer = document.querySelector('#latest');
     const allRestoPosts = document.querySelector('#posting');
     const loader = document.querySelector('.loader');
 
