@@ -12,14 +12,18 @@ class TheRestoDbSource {
     return response.json();
   }
 
-  static async postRestoReview(data) {
+  static async postRestoReview({ id, nama, review }) {
     const response = await fetch(API_ENDPOINT.REVIEW_RESTO, {
       method: 'POST',
       headers: {
         'X-Auth-Token': CONFIG.KEY,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        id,
+        nama,
+        review,
+      }),
     });
 
     return response.json();
