@@ -1,5 +1,8 @@
 import TheRestoDbSource from '../../data/therestodb-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import {
+  createRestaurantItemTemplate,
+  createSkeletonItemTemplate,
+} from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -10,7 +13,10 @@ const Home = {
         <h2>Daftar Restaurant</h2>
         <loader-bar></loader-bar>
         </div>
-        <div class="posts" id="posting"></div>
+        <div class="posts" id="posting">
+       </div>
+        <div class="posts" id="posting"> ${createSkeletonItemTemplate(30)}
+       </div>
     </div>
 </section>`;
   },

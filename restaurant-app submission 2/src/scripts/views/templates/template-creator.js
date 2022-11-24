@@ -3,9 +3,9 @@ import CONFIG from '../../global/config';
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="detail-container">
 
-    <div class="detail-resto__img">
+    <div class="detail-resto__img>
     <img
-      class="detail-resto__thumbnail"
+      class="detail-resto__thumbnail lazyload""
       src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
       alt="${restaurant.name}"
       title="${restaurant.name}"
@@ -73,7 +73,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 <article class="resto-card" alt="Menu untuk melihat restoran">
   <a class="card-tag" href="/#/detail/${restaurant.id}">
     <img
-      class="resto-card__thumbnail"
+      class="resto-card__thumbnail lazyload"
       src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
       alt="${restaurant.name}"
       title="${restaurant.name}"
@@ -116,10 +116,40 @@ const createFormReviewTemplate = () => `
   </form>
 `;
 
+const createSkeletonDetailTemplate = () => {};
+
+const createSkeletonItemTemplate = (count) => {
+  let template = '';
+
+  for (let i = 0; i < count; i++) {
+    template += `
+    <article class="resto-card skeleton" alt="Menu untuk melihat restoran">
+      <a class="card-tag skeleton">
+        <img
+          class="resto-card__thumbnail lazyload skeleton"
+          src=""
+          alt=""
+          title=""
+        />
+        <div class="resto-card__content skeleton">
+          <p class="resto-card__city skeleton"></p>
+          <p class="resto-card__date skeleton">
+            <i class="fa-sharp fa-solid fa-star skeleton"></i>=</strong>
+          </p>
+          <h1 class="resto-card__title skeleton"></h1>
+          <p class="resto-card__description skeleton"></p>
+        </div>
+      </a>
+    </article>`;
+  }
+  return template;
+};
+
 export {
   createRestaurantDetailTemplate,
   createRestaurantItemTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
   createFormReviewTemplate,
+  createSkeletonItemTemplate,
 };

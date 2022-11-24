@@ -21,6 +21,10 @@ import { WebSocketInitiator } from './utils/websocket-initiator';
 // import global
 import CONFIG from './global/config';
 
+//import lazyload
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 const app = new App({
   button: document.querySelector('.hamburger'),
   drawer: document.querySelector('nav ul'),
